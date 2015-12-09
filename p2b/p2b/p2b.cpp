@@ -8,6 +8,8 @@
 #include <algorithm>
 int loop_Count = 0;
 using namespace std;
+string sentenceTypeArr[19];
+int commLoc;
 
 
 bool main()
@@ -17,7 +19,6 @@ bool main()
 			ifstream file("cw4_20_cs.log");
 			if (file.is_open())
 			{
-				string sentenceTypeArr[19];
 
 				for (int i = 0; i < 19; ++i)
 				{
@@ -25,15 +26,27 @@ bool main()
 					cout << sentenceTypeArr[i] << '\n';
 
 
-					std::string str2(",");
-
-					std::size_t found = sentenceTypeArr[i].find(str2);
+					std::string value(",");
+					std::size_t found = sentenceTypeArr[i].find(value);
 					if (found != std::string::npos)
-						std::cout << "First ',' found at: " << found << '\n';
-
+						//std::cout << "First ',' found at: " << found << '\n';
+						 int commLocation = found;
 
 				}
-			}
-			else cout << "Unable to open file" << '\n';
+				}
+				else cout << "Unable to open file" << '\n';
+			
+				
+				std::pair <std::string, double> product1;
 
-		}
+				product1 = std::make_pair(std::string("lightbulbs"), 0.99);
+
+				
+				commLoc = sentenceTypeArr[5].find_first_of(',');
+				cout << commLoc << '\n';
+
+				sentenceTypeArr[5].substr;
+				cout << sentenceTypeArr[5];
+				
+			}
+			
